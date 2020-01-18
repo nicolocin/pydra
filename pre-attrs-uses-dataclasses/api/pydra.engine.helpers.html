@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pydra.engine.helpers module &mdash; Pydra: A simple dataflow engine with scalable semantics 0+unknown documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pydra.engine.helpers_file module" href="pydra.engine.helpers_file.html" />
+    <link rel="prev" title="pydra.engine.graph module" href="pydra.engine.graph.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Pydra: A simple dataflow engine with scalable semantics
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">Library API (application programmer interface)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pydra.engine.html">pydra.engine package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pydra.engine.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydra.mark.html">pydra.mark package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydra.utils.html">pydra.utils package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pydra: A simple dataflow engine with scalable semantics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">Library API (application programmer interface)</a> &raquo;</li>
+        
+          <li><a href="pydra.engine.html">pydra.engine package</a> &raquo;</li>
+        
+      <li>pydra.engine.helpers module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/pydra.engine.helpers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+
+
+    
+    
+
+
+
+    <p class="scv-banner scv-sphinx_rtd_theme"><a href="../../master/api/pydra.engine.helpers.html"><b>Warning:</b> This document is for the development version of Pydra: A simple dataflow engine with scalable semantics. The main version is master.</a></p>
+<div class="section" id="module-pydra.engine.helpers">
+<span id="pydra-engine-helpers-module"></span><h1>pydra.engine.helpers module<a class="headerlink" href="#module-pydra.engine.helpers" title="Permalink to this headline">¶</a></h1>
+<p>Administrative support for the engine framework.</p>
+<dl class="function">
+<dt id="pydra.engine.helpers.create_checksum">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">create_checksum</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.create_checksum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a checksum name for a given combination of task name and inputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – Task name.</p></li>
+<li><p><strong>inputs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – String of inputs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.create_pyscript">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">create_pyscript</code><span class="sig-paren">(</span><em class="sig-param">script_path</em>, <em class="sig-param">checksum</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.create_pyscript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create standalone script for task execution in a different environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>script_path</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">os.pathlike</span></code>) – Path to the script.</p></li>
+<li><p><strong>checksum</strong> (<em>str</em>) – Task checksum.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>pyscript</strong> – Execution script</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">File</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.ensure_list">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">ensure_list</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">tuple2list=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.ensure_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list whatever the input object is.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">))</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="go">[&#39;abc&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">))</span>
+<span class="go">[(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">),</span> <span class="n">tuple2list</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_list</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="go">[5.0]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.execute">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param">cmd</em>, <em class="sig-param">strip=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the event loop with coroutine.</p>
+<p>Uses <a class="reference internal" href="#pydra.engine.helpers.read_and_display_async" title="pydra.engine.helpers.read_and_display_async"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_and_display_async()</span></code></a> unless a loop is
+already running, in which case <a class="reference internal" href="#pydra.engine.helpers.read_and_display" title="pydra.engine.helpers.read_and_display"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_and_display()</span></code></a>
+is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a>) – The command line to be executed.</p></li>
+<li><p><strong>strip</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>) – TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.gather_runtime_info">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">gather_runtime_info</code><span class="sig-paren">(</span><em class="sig-param">fname</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.gather_runtime_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract runtime information from a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fname</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">os.pathlike</span></code>) – The file containing runtime information</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>runtime</strong> – A runtime object containing the collected information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Runtime</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.get_open_loop">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">get_open_loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.get_open_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current event loop.</p>
+<p>If the loop is closed, a new
+loop is created and set as the current event loop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>loop</strong> – The current event loop</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.EventLoop</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.hash_function">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">hash_function</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.hash_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate hash of object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.load_result">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">load_result</code><span class="sig-paren">(</span><em class="sig-param">checksum</em>, <em class="sig-param">cache_locations</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.load_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore a result from the cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>checksum</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>) – Unique identifier of the task to be loaded.</p></li>
+<li><p><strong>cache_locations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">os.pathlike</span></code>) – List of cache directories, in order of priority, where
+the checksum will be looked for.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.make_klass">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">make_klass</code><span class="sig-paren">(</span><em class="sig-param">spec</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.make_klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a data class given a spec.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>spec</strong> – TODO</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.output_from_inputfields">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">output_from_inputfields</code><span class="sig-paren">(</span><em class="sig-param">output_spec</em>, <em class="sig-param">inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.output_from_inputfields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect values from output from input fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_spec</strong> – TODO</p></li>
+<li><p><strong>inputs</strong> – TODO</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.output_names_from_inputfields">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">output_names_from_inputfields</code><span class="sig-paren">(</span><em class="sig-param">inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.output_names_from_inputfields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect outputs from input fields with output_file_template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>inputs</strong> – TODO</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.print_help">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">print_help</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.print_help" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visit a task object and print its input/output interface.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.read_and_display">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">read_and_display</code><span class="sig-paren">(</span><em class="sig-param">*cmd</em>, <em class="sig-param">strip=False</em>, <em class="sig-param">hide_display=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.read_and_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture a process’ standard output.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.read_and_display_async">
+<em class="property">async </em><code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">read_and_display_async</code><span class="sig-paren">(</span><em class="sig-param">*cmd</em>, <em class="sig-param">hide_display=False</em>, <em class="sig-param">strip=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.read_and_display_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture standard input and output of a process, displaying them as they arrive.</p>
+<p>Works line-by-line.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.read_stream_and_display">
+<em class="property">async </em><code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">read_stream_and_display</code><span class="sig-paren">(</span><em class="sig-param">stream</em>, <em class="sig-param">display</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.read_stream_and_display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read from stream line by line until EOF, display, and capture the lines.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This <a class="reference external" href="https://stackoverflow.com/questions/17190221">discussion on StackOverflow</a>.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.record_error">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">record_error</code><span class="sig-paren">(</span><em class="sig-param">error_path</em>, <em class="sig-param">error</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.record_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an error file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.save">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">task_path: pathlib.Path</em>, <em class="sig-param">result=None</em>, <em class="sig-param">task=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a <a class="reference internal" href="pydra.engine.core.html#pydra.engine.core.TaskBase" title="pydra.engine.core.TaskBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TaskBase</span></code></a> object and/or results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>task_path</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Path</span></code>) – Write directory</p></li>
+<li><p><strong>result</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Result</span></code>) – Result to pickle and write</p></li>
+<li><p><strong>task</strong> (<a class="reference internal" href="pydra.engine.core.html#pydra.engine.core.TaskBase" title="pydra.engine.core.TaskBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TaskBase</span></code></a>) – Task to pickle and write</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.helpers.task_hash">
+<code class="sig-prename descclassname">pydra.engine.helpers.</code><code class="sig-name descname">task_hash</code><span class="sig-paren">(</span><em class="sig-param">task</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers.task_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the checksum of a task.</p>
+<p>input hash, output hash, environment hash</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>task</strong> (<a class="reference internal" href="pydra.engine.core.html#pydra.engine.core.TaskBase" title="pydra.engine.core.TaskBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">TaskBase</span></code></a>) – The input task.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pydra.engine.helpers_file.html" class="btn btn-neutral float-right" title="pydra.engine.helpers_file module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pydra.engine.graph.html" class="btn btn-neutral float-left" title="pydra.engine.graph module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 - 2020, The Nipype Developers team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: pre-attrs-uses-dataclasses
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../master/api/pydra.engine.helpers.html">master</a></dd>
+            <dd><a href="pydra.engine.helpers.html">pre-attrs-uses-dataclasses</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

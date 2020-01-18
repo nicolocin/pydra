@@ -238,6 +238,12 @@ link is created.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="pydra.engine.helpers_file.copyfile_input">
+<code class="sig-prename descclassname">pydra.engine.helpers_file.</code><code class="sig-name descname">copyfile_input</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">output_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_file.copyfile_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement the base class method.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="pydra.engine.helpers_file.copyfiles">
 <code class="sig-prename descclassname">pydra.engine.helpers_file.</code><code class="sig-name descname">copyfiles</code><span class="sig-paren">(</span><em class="sig-param">filelist</em>, <em class="sig-param">dest</em>, <em class="sig-param">copy=False</em>, <em class="sig-param">create_new=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_file.copyfiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy or symlink files in <code class="docutils literal notranslate"><span class="pre">filelist</span></code> to <code class="docutils literal notranslate"><span class="pre">dest</span></code> directory.</p>
@@ -338,6 +344,11 @@ to the output name.</p></li>
 </dd></dl>
 
 <dl class="function">
+<dt id="pydra.engine.helpers_file.is_local_file">
+<code class="sig-prename descclassname">pydra.engine.helpers_file.</code><code class="sig-name descname">is_local_file</code><span class="sig-paren">(</span><em class="sig-param">f</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_file.is_local_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="pydra.engine.helpers_file.on_cifs">
 <code class="sig-prename descclassname">pydra.engine.helpers_file.</code><code class="sig-name descname">on_cifs</code><span class="sig-paren">(</span><em class="sig-param">fname</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_file.on_cifs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether a file path is on a CIFS filesystem mounted in a POSIX host.</p>
@@ -390,6 +401,13 @@ leading to inconsistent behavior and <code class="docutils literal notranslate">
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="pydra.engine.helpers_file.template_update">
+<code class="sig-prename descclassname">pydra.engine.helpers_file.</code><code class="sig-name descname">template_update</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">map_copyfiles=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_file.template_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update all templates that are present in the input spec.</p>
+<p>Should be run when all inputs used in the templates are already set.</p>
+</dd></dl>
+
 </div>
 
 
@@ -437,6 +455,7 @@ leading to inconsistent behavior and <code class="docutils literal notranslate">
         <dl>
             <dt>Branches</dt>
             <dd><a href="../master/api/pydra.engine.helpers_file.html">master</a></dd>
+            <dd><a href="../pre-attrs-uses-dataclasses/api/pydra.engine.helpers_file.html">pre-attrs-uses-dataclasses</a></dd>
         </dl>
     </div>
 </div>

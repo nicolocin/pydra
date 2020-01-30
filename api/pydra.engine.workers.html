@@ -189,13 +189,13 @@
 
 <dl class="method">
 <dt id="pydra.engine.workers.ConcurrentFuturesWorker.exec_as_coro">
-<em class="property">async </em><code class="sig-name descname">exec_as_coro</code><span class="sig-paren">(</span><em class="sig-param">runnable</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.ConcurrentFuturesWorker.exec_as_coro" title="Permalink to this definition">¶</a></dt>
+<em class="property">async </em><code class="sig-name descname">exec_as_coro</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">rerun=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.ConcurrentFuturesWorker.exec_as_coro" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a task (coroutine wrapper).</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pydra.engine.workers.ConcurrentFuturesWorker.run_el">
-<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.ConcurrentFuturesWorker.run_el" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">rerun=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.ConcurrentFuturesWorker.run_el" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a task.</p>
 </dd></dl>
 
@@ -271,7 +271,7 @@ py:attr:<cite>DistributedWorker.max_jobs</cite>.</p>
 
 <dl class="method">
 <dt id="pydra.engine.workers.SerialWorker.run_el">
-<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">interface</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.SerialWorker.run_el" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">interface</em>, <em class="sig-param">rerun=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.SerialWorker.run_el" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a task.</p>
 </dd></dl>
 
@@ -284,7 +284,7 @@ py:attr:<cite>DistributedWorker.max_jobs</cite>.</p>
 <p>A worker to execute tasks on SLURM systems.</p>
 <dl class="method">
 <dt id="pydra.engine.workers.SlurmWorker.run_el">
-<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">runnable</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.SlurmWorker.run_el" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">run_el</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">rerun=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.workers.SlurmWorker.run_el" title="Permalink to this definition">¶</a></dt>
 <dd><p>Worker submission API.</p>
 </dd></dl>
 

@@ -190,7 +190,7 @@
 
 <dl class="method">
 <dt id="pydra.engine.submitter.Submitter.submit">
-<em class="property">async </em><code class="sig-name descname">submit</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">wait=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.submitter.Submitter.submit" title="Permalink to this definition">¶</a></dt>
+<em class="property">async </em><code class="sig-name descname">submit</code><span class="sig-paren">(</span><em class="sig-param">runnable</em>, <em class="sig-param">wait=False</em>, <em class="sig-param">rerun=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.submitter.Submitter.submit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coroutine entrypoint for task submission.</p>
 <p>Removes any states from <cite>runnable</cite>. If <cite>wait</cite> is
 set to False (default), aggregates all worker
@@ -215,7 +215,7 @@ and returns None.</p>
 
 <dl class="method">
 <dt id="pydra.engine.submitter.Submitter.submit_workflow">
-<em class="property">async </em><code class="sig-name descname">submit_workflow</code><span class="sig-paren">(</span><em class="sig-param">workflow</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.submitter.Submitter.submit_workflow" title="Permalink to this definition">¶</a></dt>
+<em class="property">async </em><code class="sig-name descname">submit_workflow</code><span class="sig-paren">(</span><em class="sig-param">workflow</em>, <em class="sig-param">rerun=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.submitter.Submitter.submit_workflow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distribute or initiate workflow execution.</p>
 </dd></dl>
 

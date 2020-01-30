@@ -235,20 +235,20 @@
 <p>Extend shell command task for containerized execution.</p>
 <dl class="method">
 <dt id="pydra.engine.task.ContainerTask.bind_paths">
-<em class="property">property </em><code class="sig-name descname">bind_paths</code><a class="headerlink" href="#pydra.engine.task.ContainerTask.bind_paths" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">bind_paths</code><span class="sig-paren">(</span><em class="sig-param">ind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.task.ContainerTask.bind_paths" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return bound mount points: <code class="docutils literal notranslate"><span class="pre">dict(lpath:</span> <span class="pre">(cpath,</span> <span class="pre">mode))</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pydra.engine.task.ContainerTask.binds">
-<code class="sig-name descname">binds</code><span class="sig-paren">(</span><em class="sig-param">opt</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.task.ContainerTask.binds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">binds</code><span class="sig-paren">(</span><em class="sig-param">opt</em>, <em class="sig-param">ind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.task.ContainerTask.binds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify mounts to bind from local filesystems to container and working directory.</p>
 <p>Uses py:meth:<cite>binds_paths</cite></p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pydra.engine.task.ContainerTask.container_args">
-<em class="property">property </em><code class="sig-name descname">container_args</code><a class="headerlink" href="#pydra.engine.task.ContainerTask.container_args" title="Permalink to this definition">¶</a></dt>
+<dt id="pydra.engine.task.ContainerTask.container_check">
+<code class="sig-name descname">container_check</code><span class="sig-paren">(</span><em class="sig-param">container_type</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.task.ContainerTask.container_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get container-specific CLI arguments.</p>
 </dd></dl>
 
@@ -262,7 +262,7 @@
 <dl class="method">
 <dt id="pydra.engine.task.DockerTask.container_args">
 <em class="property">property </em><code class="sig-name descname">container_args</code><a class="headerlink" href="#pydra.engine.task.DockerTask.container_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get container-specific CLI arguments.</p>
+<dd><p>Get container-specific CLI arguments, returns a list if the task has a state</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -287,13 +287,14 @@
 <dl class="method">
 <dt id="pydra.engine.task.ShellCommandTask.cmdline">
 <em class="property">property </em><code class="sig-name descname">cmdline</code><a class="headerlink" href="#pydra.engine.task.ShellCommandTask.cmdline" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the actual command line that will be submitted.</p>
+<dd><p>Get the actual command line that will be submitted
+Returns a list if the task has a state.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="pydra.engine.task.ShellCommandTask.command_args">
 <em class="property">property </em><code class="sig-name descname">command_args</code><a class="headerlink" href="#pydra.engine.task.ShellCommandTask.command_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get command line arguments.</p>
+<dd><p>Get command line arguments, returns a list if task has a state</p>
 </dd></dl>
 
 </dd></dl>

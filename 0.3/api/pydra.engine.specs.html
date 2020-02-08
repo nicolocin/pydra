@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pydra.engine.specs module &mdash; Pydra: A simple dataflow engine with scalable semantics 0.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pydra.engine.state module" href="pydra.engine.state.html" />
+    <link rel="prev" title="pydra.engine.helpers_state module" href="pydra.engine.helpers_state.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Pydra: A simple dataflow engine with scalable semantics
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">Library API (application programmer interface)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pydra.engine.html">pydra.engine package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pydra.engine.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydra.mark.html">pydra.mark package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydra.utils.html">pydra.utils package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pydra: A simple dataflow engine with scalable semantics</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">Library API (application programmer interface)</a> &raquo;</li>
+        
+          <li><a href="pydra.engine.html">pydra.engine package</a> &raquo;</li>
+        
+      <li>pydra.engine.specs module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/pydra.engine.specs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+
+
+    
+    
+
+
+
+    <p class="scv-banner scv-sphinx_rtd_theme"><a href="../../master/api/pydra.engine.specs.html"><b>Warning:</b> This document is for an old version of Pydra: A simple dataflow engine with scalable semantics. The main version is master.</a></p>
+<div class="section" id="module-pydra.engine.specs">
+<span id="pydra-engine-specs-module"></span><h1>pydra.engine.specs module<a class="headerlink" href="#module-pydra.engine.specs" title="Permalink to this headline">¶</a></h1>
+<p>Task I/O specifications.</p>
+<dl class="class">
+<dt id="pydra.engine.specs.BaseSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">BaseSpec</code><a class="headerlink" href="#pydra.engine.specs.BaseSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The base dataclass specs for all inputs and outputs.</p>
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.check_fields_input_spec">
+<code class="sig-name descname">check_fields_input_spec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.check_fields_input_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check input fields.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.check_metadata">
+<code class="sig-name descname">check_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.check_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check contained metadata.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.collect_additional_outputs">
+<code class="sig-name descname">collect_additional_outputs</code><span class="sig-paren">(</span><em class="sig-param">input_spec</em>, <em class="sig-param">inputs</em>, <em class="sig-param">output_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.collect_additional_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get additional outputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.copyfile_input">
+<code class="sig-name descname">copyfile_input</code><span class="sig-paren">(</span><em class="sig-param">output_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.copyfile_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the file pointed by a <a class="reference internal" href="#pydra.engine.specs.File" title="pydra.engine.specs.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a> input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.hash">
+<em class="property">property </em><code class="sig-name descname">hash</code><a class="headerlink" href="#pydra.engine.specs.BaseSpec.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute a basic hash for any given set of fields.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.retrieve_values">
+<code class="sig-name descname">retrieve_values</code><span class="sig-paren">(</span><em class="sig-param">wf</em>, <em class="sig-param">state_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.retrieve_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get values contained by this spec.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.BaseSpec.template_update">
+<code class="sig-name descname">template_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.BaseSpec.template_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update template.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.ContainerSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">ContainerSpec</code><span class="sig-paren">(</span><em class="sig-param">*, executable: Union[str, List[str]], args: Union[str, List[str], None] = None, image: Union[pydra.engine.specs.File, str], container: Union[pydra.engine.specs.File, str, None], container_xargs: Optional[List[str]] = None, bindings: Optional[List[Tuple[pathlib.Path, pathlib.Path, Optional[str]]]] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ContainerSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydra.engine.specs.ShellSpec" title="pydra.engine.specs.ShellSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydra.engine.specs.ShellSpec</span></code></a></p>
+<p>Refine the generic command-line specification to container execution.</p>
+<dl class="attribute">
+<dt id="pydra.engine.specs.ContainerSpec.bindings">
+<code class="sig-name descname">bindings</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ContainerSpec.bindings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mount points to be bound into the container.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ContainerSpec.container">
+<code class="sig-name descname">container</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ContainerSpec.container" title="Permalink to this definition">¶</a></dt>
+<dd><p>The container.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ContainerSpec.container_xargs">
+<code class="sig-name descname">container_xargs</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ContainerSpec.container_xargs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execution arguments to run the image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ContainerSpec.image">
+<code class="sig-name descname">image</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ContainerSpec.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>The image to be containerized.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.Directory">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">Directory</code><a class="headerlink" href="#pydra.engine.specs.Directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>An <code class="xref py py-obj docutils literal notranslate"><span class="pre">os.pathlike</span></code> object, designating a folder.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.DockerSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">DockerSpec</code><span class="sig-paren">(</span><em class="sig-param">*, executable: Union[str, List[str]], args: Union[str, List[str], None] = None, image: Union[pydra.engine.specs.File, str], container_xargs: Optional[List[str]] = None, bindings: Optional[List[Tuple[pathlib.Path, pathlib.Path, Optional[str]]]] = None, container: str = 'docker'</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.DockerSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydra.engine.specs.ContainerSpec" title="pydra.engine.specs.ContainerSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydra.engine.specs.ContainerSpec</span></code></a></p>
+<p>Particularize container specifications to the Docker engine.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.File">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">File</code><a class="headerlink" href="#pydra.engine.specs.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>An <code class="xref py py-obj docutils literal notranslate"><span class="pre">os.pathlike</span></code> object, designating a file.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.LazyField">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">LazyField</code><span class="sig-paren">(</span><em class="sig-param">node</em>, <em class="sig-param">attr_type</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.LazyField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Lazy fields implement promises.</p>
+<dl class="method">
+<dt id="pydra.engine.specs.LazyField.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">wf</em>, <em class="sig-param">state_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.LazyField.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value of a lazy field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.Result">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">Result</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">output: Optional[Any] = None</em>, <em class="sig-param">runtime: Optional[pydra.engine.specs.Runtime] = None</em>, <em class="sig-param">errored: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Metadata regarding the outputs of processing.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.Runtime">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">Runtime</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">rss_peak_gb: Optional[float] = None</em>, <em class="sig-param">vms_peak_gb: Optional[float] = None</em>, <em class="sig-param">cpu_peak_percent: Optional[float] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.Runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represent run time metadata.</p>
+<dl class="attribute">
+<dt id="pydra.engine.specs.Runtime.cpu_peak_percent">
+<code class="sig-name descname">cpu_peak_percent</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.Runtime.cpu_peak_percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Peak in cpu consumption.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.Runtime.rss_peak_gb">
+<code class="sig-name descname">rss_peak_gb</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.Runtime.rss_peak_gb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Peak in consumption of physical RAM.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.Runtime.vms_peak_gb">
+<code class="sig-name descname">vms_peak_gb</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.Runtime.vms_peak_gb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Peak in consumption of virtual memory.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.RuntimeSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">RuntimeSpec</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">outdir: Optional[str] = None</em>, <em class="sig-param">container: Optional[str] = 'shell'</em>, <em class="sig-param">network: bool = False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.RuntimeSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Specification for a task.</p>
+<p>From CWL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">InlineJavascriptRequirement</span>
+<span class="n">SchemaDefRequirement</span>
+<span class="n">DockerRequirement</span>
+<span class="n">SoftwareRequirement</span>
+<span class="n">InitialWorkDirRequirement</span>
+<span class="n">EnvVarRequirement</span>
+<span class="n">ShellCommandRequirement</span>
+<span class="n">ResourceRequirement</span>
+
+<span class="n">InlineScriptRequirement</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.ShellOutSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">ShellOutSpec</code><span class="sig-paren">(</span><em class="sig-param">*, return_code: int, stdout: Union[pydra.engine.specs.File, str], stderr: Union[pydra.engine.specs.File, str]</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellOutSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydra.engine.specs.BaseSpec" title="pydra.engine.specs.BaseSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydra.engine.specs.BaseSpec</span></code></a></p>
+<p>Output specification of a generic shell process.</p>
+<dl class="method">
+<dt id="pydra.engine.specs.ShellOutSpec.collect_additional_outputs">
+<code class="sig-name descname">collect_additional_outputs</code><span class="sig-paren">(</span><em class="sig-param">input_spec</em>, <em class="sig-param">inputs</em>, <em class="sig-param">output_dir</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellOutSpec.collect_additional_outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect additional outputs from shelltask output_spec.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ShellOutSpec.return_code">
+<code class="sig-name descname">return_code</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ShellOutSpec.return_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>The process’ exit code.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ShellOutSpec.stderr">
+<code class="sig-name descname">stderr</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ShellOutSpec.stderr" title="Permalink to this definition">¶</a></dt>
+<dd><p>The process’ standard input.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.ShellOutSpec.stdout">
+<code class="sig-name descname">stdout</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.ShellOutSpec.stdout" title="Permalink to this definition">¶</a></dt>
+<dd><p>The process’ standard output.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.ShellSpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">ShellSpec</code><span class="sig-paren">(</span><em class="sig-param">*, executable: Union[str, List[str]], args: Union[str, List[str], None] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydra.engine.specs.BaseSpec" title="pydra.engine.specs.BaseSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydra.engine.specs.BaseSpec</span></code></a></p>
+<p>Specification for a process invoked from a shell.</p>
+<dl class="method">
+<dt id="pydra.engine.specs.ShellSpec.check_fields_input_spec">
+<code class="sig-name descname">check_fields_input_spec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellSpec.check_fields_input_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check fields from input spec based on the medatada.</p>
+<p>e.g., if xor, requires are fulfilled, if value provided when mandatory.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.ShellSpec.check_metadata">
+<code class="sig-name descname">check_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellSpec.check_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the metadata for fields in input_spec and fields.</p>
+<p>Also sets the default values when available and needed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.specs.ShellSpec.retrieve_values">
+<code class="sig-name descname">retrieve_values</code><span class="sig-paren">(</span><em class="sig-param">wf</em>, <em class="sig-param">state_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.ShellSpec.retrieve_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse output results.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.SingularitySpec">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">SingularitySpec</code><span class="sig-paren">(</span><em class="sig-param">*, executable: Union[str, List[str]], args: Union[str, List[str], None] = None, image: Union[pydra.engine.specs.File, str], container_xargs: Optional[List[str]] = None, bindings: Optional[List[Tuple[pathlib.Path, pathlib.Path, Optional[str]]]] = None, container: str = 'singularity'</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.SingularitySpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydra.engine.specs.ContainerSpec" title="pydra.engine.specs.ContainerSpec"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydra.engine.specs.ContainerSpec</span></code></a></p>
+<p>Particularize container specifications to Singularity.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.SpecInfo">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">SpecInfo</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">name: str</em>, <em class="sig-param">fields: List[Tuple] = NOTHING</em>, <em class="sig-param">bases: Tuple[Type] = NOTHING</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.SpecInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Base data structure for metadata of specifications.</p>
+<dl class="attribute">
+<dt id="pydra.engine.specs.SpecInfo.bases">
+<code class="sig-name descname">bases</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.SpecInfo.bases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keeps track of this specification inheritance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.SpecInfo.fields">
+<code class="sig-name descname">fields</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.SpecInfo.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of names of fields (inputs or outputs).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pydra.engine.specs.SpecInfo.name">
+<code class="sig-name descname">name</code><em class="property"> = None</em><a class="headerlink" href="#pydra.engine.specs.SpecInfo.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A name for the specification.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pydra.engine.specs.TaskHook">
+<em class="property">class </em><code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">TaskHook</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">pre_run_task: Callable = &lt;function donothing&gt;</em>, <em class="sig-param">post_run_task: Callable = &lt;function donothing&gt;</em>, <em class="sig-param">pre_run: Callable = &lt;function donothing&gt;</em>, <em class="sig-param">post_run: Callable = &lt;function donothing&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.TaskHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Callable task hooks.</p>
+<dl class="method">
+<dt id="pydra.engine.specs.TaskHook.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.TaskHook.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.specs.attr_fields">
+<code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">attr_fields</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.attr_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.specs.donothing">
+<code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">donothing</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.donothing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pydra.engine.specs.path_to_string">
+<code class="sig-prename descclassname">pydra.engine.specs.</code><code class="sig-name descname">path_to_string</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.specs.path_to_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert paths to strings.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pydra.engine.state.html" class="btn btn-neutral float-right" title="pydra.engine.state module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pydra.engine.helpers_state.html" class="btn btn-neutral float-left" title="pydra.engine.helpers_state module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019 - 2020, The Nipype Developers team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: 0.3
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="pydra.engine.specs.html">0.3</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="../../master/api/pydra.engine.specs.html">master</a></dd>
+            <dd><a href="../../pre-attrs-uses-dataclasses/api/pydra.engine.specs.html">pre-attrs-uses-dataclasses</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

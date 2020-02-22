@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Pydra: A simple dataflow engine with scalable semantics 0.3 documentation</title>
+  <title>Index &mdash; Pydra: A simple dataflow engine with scalable semantics 0+unknown documentation</title>
   
 
   
@@ -22,10 +22,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.3
+                0
               </div>
             
           
@@ -201,6 +201,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.mark.functions.html#pydra.mark.functions.annotate">annotate() (in module pydra.mark.functions)</a>
 </li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.ShellSpec.args">args (pydra.engine.specs.ShellSpec attribute)</a>
+</li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.attr_fields">attr_fields() (in module pydra.engine.specs)</a>
 </li>
       <li><a href="api/pydra.engine.audit.html#pydra.engine.audit.Audit">Audit (class in pydra.engine.audit)</a>
@@ -301,14 +303,14 @@
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.combiner">combiner() (pydra.engine.state.State property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.html#pydra.engine.ShellCommandTask.command_args">command_args() (pydra.engine.ShellCommandTask property)</a>
 
       <ul>
         <li><a href="api/pydra.engine.task.html#pydra.engine.task.ShellCommandTask.command_args">(pydra.engine.task.ShellCommandTask property)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.workers.html#pydra.engine.workers.ConcurrentFuturesWorker">ConcurrentFuturesWorker (class in pydra.engine.workers)</a>
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.connect_groups">connect_groups() (pydra.engine.state.State method)</a>
@@ -320,7 +322,15 @@
 </li>
       </ul></li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.ContainerSpec.container">container (pydra.engine.specs.ContainerSpec attribute)</a>
+
+      <ul>
+        <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.DockerSpec.container">(pydra.engine.specs.DockerSpec attribute)</a>
 </li>
+        <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.RuntimeSpec.container">(pydra.engine.specs.RuntimeSpec attribute)</a>
+</li>
+        <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.SingularitySpec.container">(pydra.engine.specs.SingularitySpec attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/pydra.engine.html#pydra.engine.DockerTask.container_args">container_args() (pydra.engine.DockerTask property)</a>
 
       <ul>
@@ -419,7 +429,11 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result.errored">errored (pydra.engine.specs.Result attribute)</a>
+</li>
       <li><a href="api/pydra.engine.workers.html#pydra.engine.workers.ConcurrentFuturesWorker.exec_as_coro">exec_as_coro() (pydra.engine.workers.ConcurrentFuturesWorker method)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.ShellSpec.executable">executable (pydra.engine.specs.ShellSpec attribute)</a>
 </li>
       <li><a href="api/pydra.engine.helpers.html#pydra.engine.helpers.execute">execute() (in module pydra.engine.helpers)</a>
 </li>
@@ -601,6 +615,8 @@
         <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.name">(pydra.engine.state.State attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.RuntimeSpec.network">network (pydra.engine.specs.RuntimeSpec attribute)</a>
+</li>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.Workflow.nodes">nodes() (pydra.engine.core.Workflow property)</a>
 
       <ul>
@@ -631,10 +647,14 @@
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.other_states">other_states (pydra.engine.state.State attribute)</a>
 </li>
-      <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.output_dir">output_dir() (pydra.engine.core.TaskBase property)</a>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.RuntimeSpec.outdir">outdir (pydra.engine.specs.RuntimeSpec attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result.output">output (pydra.engine.specs.Result attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.output_dir">output_dir() (pydra.engine.core.TaskBase property)</a>
+</li>
       <li><a href="api/pydra.engine.helpers.html#pydra.engine.helpers.output_from_inputfields">output_from_inputfields() (in module pydra.engine.helpers)</a>
 </li>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.output_names">output_names() (pydra.engine.core.TaskBase property)</a>
@@ -648,6 +668,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.path_to_string">path_to_string() (in module pydra.engine.specs)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.TaskHook.post_run">post_run (pydra.engine.specs.TaskHook attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.TaskHook.post_run_task">post_run_task (pydra.engine.specs.TaskHook attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.TaskHook.pre_run">pre_run (pydra.engine.specs.TaskHook attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.TaskHook.pre_run_task">pre_run_task (pydra.engine.specs.TaskHook attribute)</a>
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.prepare_inputs">prepare_inputs() (pydra.engine.state.State method)</a>
 </li>
@@ -673,12 +701,12 @@
 </li>
       <li><a href="api.html#module-pydra">pydra (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.html#module-pydra.engine">pydra.engine (module)</a>
 </li>
       <li><a href="api/pydra.engine.audit.html#module-pydra.engine.audit">pydra.engine.audit (module)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.core.html#module-pydra.engine.core">pydra.engine.core (module)</a>
 </li>
       <li><a href="api/pydra.engine.graph.html#module-pydra.engine.graph">pydra.engine.graph (module)</a>
@@ -747,10 +775,10 @@
 </li>
       <li><a href="api/pydra.utils.profiler.html#pydra.utils.profiler.ResourceMonitor">ResourceMonitor (class in pydra.utils.profiler)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result">Result (class in pydra.engine.specs)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.result">result() (pydra.engine.core.TaskBase method)</a>
 
       <ul>
@@ -782,6 +810,8 @@
 </li>
       </ul></li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Runtime">Runtime (class in pydra.engine.specs)</a>
+</li>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result.runtime">runtime (pydra.engine.specs.Result attribute)</a>
 </li>
       <li><a href="api/pydra.utils.messenger.html#pydra.utils.messenger.RuntimeHooks">RuntimeHooks (class in pydra.utils.messenger)</a>
 </li>
@@ -996,17 +1026,17 @@
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
-        v: 0.3
+        v: master
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
-            <dd><a href="0.3/genindex.html">0.3</a></dd>
+            <dd><a href="0.3/index.html">0.3</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="master/index.html">master</a></dd>
+            <dd><a href="master/genindex.html">master</a></dd>
             <dd><a href="pre-attrs-uses-dataclasses/index.html">pre-attrs-uses-dataclasses</a></dd>
         </dl>
     </div>

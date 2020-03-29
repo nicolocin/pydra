@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pydra.engine.state module &mdash; Pydra: A simple dataflow engine with scalable semantics 0.3.1 documentation</title>
+  <title>pydra.engine.state module &mdash; Pydra: A simple dataflow engine with scalable semantics 0+unknown documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.3.1
+                0
               </div>
             
           
@@ -377,33 +377,54 @@ after combining and partial indices of the results</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pydra.engine.state.State.connect_groups">
-<code class="sig-name descname">connect_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.connect_groups" title="Permalink to this definition">¶</a></dt>
-<dd><p>“Connect previous states and evaluate the final groups.</p>
+<dt id="pydra.engine.state.State.combiner_validation">
+<code class="sig-name descname">combiner_validation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.combiner_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>validating if the combiner is correct (after all states are connected)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pydra.engine.state.State.connect_splitters">
-<code class="sig-name descname">connect_splitters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.connect_splitters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect splitters from previous nodes.</p>
-<p>Evaluates Left (the part from previous states) and Right (current state) parts.</p>
+<dt>
+<em class="property">property </em><code class="sig-name descname">inner_inputs</code></dt>
+<dd><p>input fields from previous nodes</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pydra.engine.state.State.merge_previous_states">
-<code class="sig-name descname">merge_previous_states</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.merge_previous_states" title="Permalink to this definition">¶</a></dt>
-<dd><p>Merge groups from  all previous nodes.</p>
+<dt id="pydra.engine.state.State.left_combiner">
+<em class="property">property </em><code class="sig-name descname">left_combiner</code><a class="headerlink" href="#pydra.engine.state.State.left_combiner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.left_combiner_all">
+<em class="property">property </em><code class="sig-name descname">left_combiner_all</code><a class="headerlink" href="#pydra.engine.state.State.left_combiner_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.left_splitter">
+<em class="property">property </em><code class="sig-name descname">left_splitter</code><a class="headerlink" href="#pydra.engine.state.State.left_splitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>splitters from the previous stated (i.e. the Light part)</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.left_splitter_rpn">
+<em class="property">property </em><code class="sig-name descname">left_splitter_rpn</code><a class="headerlink" href="#pydra.engine.state.State.left_splitter_rpn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.left_splitter_rpn_compact">
+<em class="property">property </em><code class="sig-name descname">left_splitter_rpn_compact</code><a class="headerlink" href="#pydra.engine.state.State.left_splitter_rpn_compact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">other_states</code></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="pydra.engine.state.State.prepare_inputs">
 <code class="sig-name descname">prepare_inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.prepare_inputs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get inputs ready.</p>
-<ol class="arabic simple">
-<li><p>Remove elements that come from connected states.</p></li>
-<li><p>Merge elements that come from outputs of previous nodes.</p></li>
-<li><p>Remove elements connected to the inner splitter.</p></li>
-</ol>
+<dd><p>Preparing inputs indices, merges input from previous states.</p>
+<p>Includes indices for fields from inner splitters
+(removes elements connected to the inner splitters fields).</p>
 </dd></dl>
 
 <dl class="method">
@@ -438,27 +459,69 @@ after combining and partial indices of the results</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="pydra.engine.state.State.push_new_states">
-<code class="sig-name descname">push_new_states</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.push_new_states" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add additional groups from the current state.</p>
+<dt id="pydra.engine.state.State.right_combiner">
+<em class="property">property </em><code class="sig-name descname">right_combiner</code><a class="headerlink" href="#pydra.engine.state.State.right_combiner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.right_combiner_all">
+<em class="property">property </em><code class="sig-name descname">right_combiner_all</code><a class="headerlink" href="#pydra.engine.state.State.right_combiner_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.right_splitter">
+<em class="property">property </em><code class="sig-name descname">right_splitter</code><a class="headerlink" href="#pydra.engine.state.State.right_splitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>current state splitter (i.e. the Right part)</p>
 </dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.right_splitter_rpn">
+<em class="property">property </em><code class="sig-name descname">right_splitter_rpn</code><a class="headerlink" href="#pydra.engine.state.State.right_splitter_rpn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="pydra.engine.state.State.set_input_groups">
-<code class="sig-name descname">set_input_groups</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.set_input_groups" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_input_groups</code><span class="sig-paren">(</span><em class="sig-param">state_fields=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.set_input_groups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate groups, especially the final groups that address the combiner.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="pydra.engine.state.State.set_splitter_final">
-<code class="sig-name descname">set_splitter_final</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.set_splitter_final" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluate a final splitter after combining.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
 <em class="property">property </em><code class="sig-name descname">splitter</code></dt>
 <dd><p>Get the splitter of the state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">splitter_final</code></dt>
+<dd><p>final splitter, after removing the combined fields</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">splitter_rpn</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">property </em><code class="sig-name descname">splitter_rpn_compact</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.splitter_rpn_final">
+<em class="property">property </em><code class="sig-name descname">splitter_rpn_final</code><a class="headerlink" href="#pydra.engine.state.State.splitter_rpn_final" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.splitter_validation">
+<code class="sig-name descname">splitter_validation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.splitter_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>validating if the splitter is correct (after all states are connected)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pydra.engine.state.State.update_connections">
+<code class="sig-name descname">update_connections</code><span class="sig-paren">(</span><em class="sig-param">new_other_states=None</em>, <em class="sig-param">new_combiner=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.state.State.update_connections" title="Permalink to this definition">¶</a></dt>
+<dd><p>updating states connections and input groups</p>
 </dd></dl>
 
 </dd></dl>

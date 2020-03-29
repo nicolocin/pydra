@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Pydra: A simple dataflow engine with scalable semantics 0.3.1 documentation</title>
+  <title>Index &mdash; Pydra: A simple dataflow engine with scalable semantics 0+unknown documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.3.1
+                0
               </div>
             
           
@@ -170,6 +170,7 @@
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
  | <a href="#W"><strong>W</strong></a>
  
@@ -303,24 +304,18 @@
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.combiner">combiner() (pydra.engine.state.State property)</a>
 </li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.combiner_validation">combiner_validation() (pydra.engine.state.State method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.html#pydra.engine.ShellCommandTask.command_args">command_args() (pydra.engine.ShellCommandTask property)</a>
 
       <ul>
         <li><a href="api/pydra.engine.task.html#pydra.engine.task.ShellCommandTask.command_args">(pydra.engine.task.ShellCommandTask property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.workers.html#pydra.engine.workers.ConcurrentFuturesWorker">ConcurrentFuturesWorker (class in pydra.engine.workers)</a>
 </li>
-      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.connect_groups">connect_groups() (pydra.engine.state.State method)</a>
-</li>
-      <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.connect_splitters">connect_splitters() (in module pydra.engine.helpers_state)</a>
-
-      <ul>
-        <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.connect_splitters">(pydra.engine.state.State method)</a>
-</li>
-      </ul></li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.ContainerSpec.container">container (pydra.engine.specs.ContainerSpec attribute)</a>
 
       <ul>
@@ -543,14 +538,16 @@
       </ul></li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.inner_inputs">inner_inputs (pydra.engine.state.State attribute)</a>
 </li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.inner_inputs">inner_inputs() (pydra.engine.state.State property)</a>
+</li>
       <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.input_shape">input_shape() (in module pydra.engine.helpers_state)</a>
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.inputs_ind">inputs_ind (pydra.engine.state.State attribute)</a>
 </li>
-      <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.inputs_types_to_dict">inputs_types_to_dict() (in module pydra.engine.helpers_state)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.inputs_types_to_dict">inputs_types_to_dict() (in module pydra.engine.helpers_state)</a>
+</li>
       <li><a href="api/pydra.engine.helpers_file.html#pydra.engine.helpers_file.is_container">is_container() (in module pydra.engine.helpers_file)</a>
 </li>
       <li><a href="api/pydra.engine.helpers_file.html#pydra.engine.helpers_file.is_existing_file">is_existing_file() (in module pydra.engine.helpers_file)</a>
@@ -575,8 +572,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.LazyField">LazyField (class in pydra.engine.specs)</a>
 </li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.left_combiner">left_combiner() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.left_combiner_all">left_combiner_all() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.left_splitter">left_splitter() (pydra.engine.state.State property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.left_splitter_rpn">left_splitter_rpn() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.left_splitter_rpn_compact">left_splitter_rpn_compact() (pydra.engine.state.State property)</a>
+</li>
       <li><a href="api/pydra.engine.helpers.html#pydra.engine.helpers.load_result">load_result() (in module pydra.engine.helpers)</a>
 </li>
       <li><a href="api/pydra.utils.profiler.html#pydra.utils.profiler.log_nodes_cb">log_nodes_cb() (in module pydra.utils.profiler)</a>
@@ -596,8 +603,6 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.workers.html#pydra.engine.workers.DistributedWorker.max_jobs">max_jobs (pydra.engine.workers.DistributedWorker attribute)</a>
-</li>
-      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.merge_previous_states">merge_previous_states() (pydra.engine.state.State method)</a>
 </li>
       <li><a href="api/pydra.utils.messenger.html#pydra.utils.messenger.Messenger">Messenger (class in pydra.utils.messenger)</a>
 </li>
@@ -647,12 +652,14 @@
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.other_states">other_states (pydra.engine.state.State attribute)</a>
 </li>
-      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.RuntimeSpec.outdir">outdir (pydra.engine.specs.RuntimeSpec attribute)</a>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.other_states">other_states() (pydra.engine.state.State property)</a>
 </li>
-      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result.output">output (pydra.engine.specs.Result attribute)</a>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.RuntimeSpec.outdir">outdir (pydra.engine.specs.RuntimeSpec attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result.output">output (pydra.engine.specs.Result attribute)</a>
+</li>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.output_dir">output_dir() (pydra.engine.core.TaskBase property)</a>
 </li>
       <li><a href="api/pydra.engine.helpers.html#pydra.engine.helpers.output_from_inputfields">output_from_inputfields() (in module pydra.engine.helpers)</a>
@@ -697,14 +704,12 @@
         <li><a href="api/pydra.utils.messenger.html#pydra.utils.messenger.AuditFlag.PROV">(pydra.utils.messenger.AuditFlag attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.push_new_states">push_new_states() (pydra.engine.state.State method)</a>
-</li>
       <li><a href="api.html#module-pydra">pydra (module)</a>
+</li>
+      <li><a href="api/pydra.engine.html#module-pydra.engine">pydra.engine (module)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/pydra.engine.html#module-pydra.engine">pydra.engine (module)</a>
-</li>
       <li><a href="api/pydra.engine.audit.html#module-pydra.engine.audit">pydra.engine.audit (module)</a>
 </li>
       <li><a href="api/pydra.engine.core.html#module-pydra.engine.core">pydra.engine.core (module)</a>
@@ -777,14 +782,14 @@
 </li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.Result">Result (class in pydra.engine.specs)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.result">result() (pydra.engine.core.TaskBase method)</a>
 
       <ul>
         <li><a href="api/pydra.engine.workers.html#pydra.engine.workers.SerialPool.result">(pydra.engine.workers.SerialPool method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.BaseSpec.retrieve_values">retrieve_values() (pydra.engine.specs.BaseSpec method)</a>
 
       <ul>
@@ -792,6 +797,14 @@
 </li>
       </ul></li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.ShellOutSpec.return_code">return_code (pydra.engine.specs.ShellOutSpec attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.right_combiner">right_combiner() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.right_combiner_all">right_combiner_all() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.right_splitter">right_splitter() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.right_splitter_rpn">right_splitter_rpn() (pydra.engine.state.State property)</a>
 </li>
       <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.rpn2splitter">rpn2splitter() (in module pydra.engine.helpers_state)</a>
 </li>
@@ -849,8 +862,6 @@
         <li><a href="api/pydra.engine.html#pydra.engine.Workflow.set_output">(pydra.engine.Workflow method)</a>
 </li>
       </ul></li>
-      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.set_splitter_final">set_splitter_final() (pydra.engine.state.State method)</a>
-</li>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.set_state">set_state() (pydra.engine.core.TaskBase method)</a>
 </li>
       <li><a href="api/pydra.engine.html#pydra.engine.ShellCommandTask">ShellCommandTask (class in pydra.engine)</a>
@@ -877,14 +888,14 @@
 </li>
       <li><a href="api/pydra.engine.specs.html#pydra.engine.specs.SpecInfo">SpecInfo (class in pydra.engine.specs)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.core.html#pydra.engine.core.TaskBase.split">split() (pydra.engine.core.TaskBase method)</a>
 </li>
       <li><a href="api/pydra.engine.helpers_file.html#pydra.engine.helpers_file.split_filename">split_filename() (in module pydra.engine.helpers_file)</a>
 </li>
       <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.splits">splits() (in module pydra.engine.helpers_state)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/pydra.engine.helpers_state.html#pydra.engine.helpers_state.splits_groups">splits_groups() (in module pydra.engine.helpers_state)</a>
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter">splitter (pydra.engine.state.State attribute)</a>
@@ -895,9 +906,19 @@
 </li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_final">splitter_final (pydra.engine.state.State attribute)</a>
 </li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_final">splitter_final() (pydra.engine.state.State property)</a>
+</li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_rpn">splitter_rpn (pydra.engine.state.State attribute)</a>
 </li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_rpn">splitter_rpn() (pydra.engine.state.State property)</a>
+</li>
       <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_rpn_compact">splitter_rpn_compact (pydra.engine.state.State attribute)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_rpn_compact">splitter_rpn_compact() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_rpn_final">splitter_rpn_final() (pydra.engine.state.State property)</a>
+</li>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.splitter_validation">splitter_validation() (pydra.engine.state.State method)</a>
 </li>
       <li><a href="api/pydra.engine.audit.html#pydra.engine.audit.Audit.start_audit">start_audit() (pydra.engine.audit.Audit method)</a>
 </li>
@@ -968,6 +989,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/pydra.engine.state.html#pydra.engine.state.State.update_connections">update_connections() (pydra.engine.state.State method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1026,18 +1055,18 @@
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
-        v: 0.3.1
+        v: master
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
             <dd><a href="0.3/index.html">0.3</a></dd>
-            <dd><a href="0.3.1/genindex.html">0.3.1</a></dd>
+            <dd><a href="0.3.1/index.html">0.3.1</a></dd>
         </dl>
         <dl>
             <dt>Branches</dt>
-            <dd><a href="master/index.html">master</a></dd>
+            <dd><a href="master/genindex.html">master</a></dd>
             <dd><a href="pre-attrs-uses-dataclasses/index.html">pre-attrs-uses-dataclasses</a></dd>
         </dl>
     </div>

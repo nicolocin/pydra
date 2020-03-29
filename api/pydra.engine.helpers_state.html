@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pydra.engine.helpers_state module &mdash; Pydra: A simple dataflow engine with scalable semantics 0.3.1 documentation</title>
+  <title>pydra.engine.helpers_state module &mdash; Pydra: A simple dataflow engine with scalable semantics 0+unknown documentation</title>
   
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                0.3.1
+                0
               </div>
             
           
@@ -170,25 +170,22 @@
   
 
 
-    
-    
 
 
 
-    <p class="scv-banner scv-sphinx_rtd_theme"><a href="../master/api/pydra.engine.helpers_state.html"><b>Warning:</b> This document is for an old version of Pydra: A simple dataflow engine with scalable semantics. The main version is master.</a></p>
 <div class="section" id="module-pydra.engine.helpers_state">
 <span id="pydra-engine-helpers-state-module"></span><h1>pydra.engine.helpers_state module<a class="headerlink" href="#module-pydra.engine.helpers_state" title="Permalink to this headline">¶</a></h1>
 <p>Additional functions used mostly by the State class.</p>
 <dl class="function">
 <dt id="pydra.engine.helpers_state.add_name_combiner">
 <code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">add_name_combiner</code><span class="sig-paren">(</span><em class="sig-param">combiner</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.add_name_combiner" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a combiner.</p>
+<dd><p>adding a node’s name to each field from the combiner</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="pydra.engine.helpers_state.add_name_splitter">
 <code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">add_name_splitter</code><span class="sig-paren">(</span><em class="sig-param">splitter</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.add_name_splitter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change names of splitter: adding names of the node.</p>
+<dd><p>adding a node’s name to each field from the splitter</p>
 </dd></dl>
 
 <dl class="function">
@@ -198,19 +195,13 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="pydra.engine.helpers_state.connect_splitters">
-<code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">connect_splitters</code><span class="sig-paren">(</span><em class="sig-param">splitter</em>, <em class="sig-param">other_states</em>, <em class="sig-param">state_fields=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.connect_splitters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Link splitters.</p>
-</dd></dl>
-
-<dl class="function">
 <dt id="pydra.engine.helpers_state.converter_groups_to_input">
 <code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">converter_groups_to_input</code><span class="sig-paren">(</span><em class="sig-param">group_for_inputs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.converter_groups_to_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return fields for each axis and number of all groups.</p>
 <p>Requires having axes for all the input fields.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>group_for_inputs</strong> – TODO</p>
+<dd class="field-odd"><p><strong>group_for_inputs</strong> – specified axes (groups) for each input</p>
 </dd>
 </dl>
 </dd></dl>
@@ -242,7 +233,7 @@
 <dl class="function">
 <dt id="pydra.engine.helpers_state.map_splits">
 <code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">map_splits</code><span class="sig-paren">(</span><em class="sig-param">split_iter</em>, <em class="sig-param">inputs</em>, <em class="sig-param">cont_dim=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.map_splits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a dictionary of prescribed splits.</p>
+<dd><p>generate a dictionary of inputs prescribed by the splitter.</p>
 </dd></dl>
 
 <dl class="function">
@@ -254,7 +245,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>splitter_rpn</strong> – The splitter in reverse polish notation</p></li>
-<li><p><strong>inputs_to_remove</strong> – TODO</p></li>
+<li><p><strong>inputs_to_remove</strong> – input names that should be removed from the splitter</p></li>
 </ul>
 </dd>
 </dl>
@@ -269,10 +260,10 @@ Every time combines pairs of input in one input,
 ends when the length is one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>splitter_rpn</strong> – TODO</p>
+<dd class="field-odd"><p><strong>splitter_rpn</strong> – splitter in reverse polish notation</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>TODO</p>
+<dd class="field-even"><p>splitter in the standard/original form</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>splitter</p>
@@ -307,7 +298,8 @@ if not specified 1 will be used for all inputs (so will not be flatten)</p></li>
 <dl class="function">
 <dt id="pydra.engine.helpers_state.splits_groups">
 <code class="sig-prename descclassname">pydra.engine.helpers_state.</code><code class="sig-name descname">splits_groups</code><span class="sig-paren">(</span><em class="sig-param">splitter_rpn</em>, <em class="sig-param">combiner=None</em>, <em class="sig-param">inner_inputs=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydra.engine.helpers_state.splits_groups" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process splitter rpn from left to right.</p>
+<dd><p>splits inputs to groups (axes) and creates stacks for these groups
+This is used to specify which input can be combined.</p>
 </dd></dl>
 
 <dl class="function">
@@ -318,9 +310,9 @@ if not specified 1 will be used for all inputs (so will not be flatten)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>splitter</strong> – TODO</p></li>
-<li><p><strong>other_states</strong> – TODO</p></li>
-<li><p><strong>state_fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>) – TODO</p></li>
+<li><p><strong>splitter</strong> – splitter (standard form)</p></li>
+<li><p><strong>other_states</strong> – other states that are connected to the state</p></li>
+<li><p><strong>state_fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>) – if False the splitter from the previous states are unwrapped</p></li>
 </ul>
 </dd>
 </dl>
@@ -366,7 +358,7 @@ if not specified 1 will be used for all inputs (so will not be flatten)</p></li>
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
         <span class="fa fa-book"> Other Versions</span>
-        v: 0.3.1
+        v: master
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">

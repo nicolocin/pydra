@@ -103,6 +103,14 @@ class FunctionTask(TaskBase):
             Specification of inputs.
 
         """
+
+        # Check if argument names are consistent
+        func_args = list(inspect.signature(func).parameters.keys())
+        for var in kwargs.keys():
+            if var not in func_args:
+                raise TypeError(
+                    f"{func.__name__}() got an unexpected keyword argument '{var}'"
+                )
         if input_spec is None:
             input_spec = SpecInfo(
                 name="Inputs",

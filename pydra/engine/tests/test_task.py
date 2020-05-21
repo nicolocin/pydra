@@ -26,6 +26,24 @@ def test_output():
     assert res.output.out == 5
 
 
+def test_arg_conflict():
+    @mark.task
+    def testarg1(a):
+        return a
+
+    with pytest.raises(TypeError):
+        nn = testarg1(b=3)
+
+
+def test_arg_conflict2():
+    @mark.task
+    def testarg2(a, b):
+        return a + 1, b + 1
+
+    with pytest.raises(TypeError):
+        nn = testarg2(a=1, c=3)
+
+
 def test_numpy():
     """ checking if mark.task works for numpy functions"""
     np = pytest.importorskip("numpy")

@@ -1,0 +1,30 @@
+name: Test Pydra (SLURM)
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: mgxd/slurm:19.05.1
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run codecov
+      run: bash <(curl -s https://codecov.io/bash) -v -n SLURM
+    - name: Display previous jobs with sacct
+      run: |
+        sacctmgr -i add cluster name=linux \
+          && supervisorctl restart slurmdbd \
+          && supervisorctl restart slurmctld \
+          && sacctmgr -i add account none,test Cluster=linux Description='none' Organization='none'
+        sacct && sinfo && squeue
+    - name: Setup Python
+      run: |
+        ls -la && echo list top level dir
+        ls -la /pydra && echo list pydra dir
+        pip install -e /pydra[test]
+        python -c 'import pydra; print(pydra.__version__)'
+    - name: Run pytest
+      run: pytest --color=yes -vs -n auto --cov pydra --cov-config /pydra/.coveragerc --cov-report xml:/pydra/cov.xml --doctest-modules /pydra/pydra
+    - name: Upload to codecov
+      run: codecov --root /pydra -f /pydra/cov.xml -F unittests

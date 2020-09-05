@@ -1,4 +1,4 @@
-name: Test Pydra (SLURM)
+name: SLURM testing
 
 on: [push, pull_request]
 
@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run codecov
-      run: bash <(curl -s https://codecov.io/bash) -v -n SLURM
+      run: bash -c "bash <(curl -s https://codecov.io/env) -v -n SLURM"
     - name: Display previous jobs with sacct
       run: |
         sacctmgr -i add cluster name=linux \
@@ -25,6 +25,6 @@ jobs:
         pip install -e /pydra[test]
         python -c 'import pydra; print(pydra.__version__)'
     - name: Run pytest
-      run: pytest --color=yes -vs -n auto --cov pydra --cov-config /pydra/.coveragerc --cov-report xml:/pydra/cov.xml --doctest-modules /pydra/pydra
+      run: pytest --color=yes -vs -n auto --cov pydra --cov-config /pydra/.coveragerc --cov-report xml:cov.xml --doctest-modules /pydra/pydra
     - name: Upload to codecov
-      run: codecov --root /pydra -f /pydra/cov.xml -F unittests
+      run: codecov --root /pydra -f cov.xml -F unittests

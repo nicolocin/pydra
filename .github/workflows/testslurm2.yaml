@@ -13,6 +13,7 @@ jobs:
       run: bash -c "bash <(curl -s https://codecov.io/env) -v -n SLURM"
     - name: Display previous jobs with sacct
       run: |
+        echo "Allowing ports/daemons time to start" && sleep 10
         sacctmgr -i add cluster name=linux \
           && supervisorctl restart slurmdbd \
           && supervisorctl restart slurmctld \

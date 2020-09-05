@@ -2,14 +2,21 @@ name: SLURM testing
 
 on: [push, pull_request]
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
     container: mgxd/slurm:19.05.1
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run codecov
+    - uses: actions/checkout@
+
+    - name: Allowing ports/daemons time to start
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '30s'
+
+    - name: Setup codecov
       run: bash -c "bash <(curl -s https://codecov.io/env) -v -n SLURM"
     - name: Display previous jobs with sacct
       run: |
@@ -25,6 +32,7 @@ jobs:
         ls -la /pydra && echo list pydra dir
         pip install -e /pydra[test]
         python -c 'import pydra; print(pydra.__version__)'
+
     - name: Run pytest
       run: pytest --color=yes -vs -n auto --cov pydra --cov-config /pydra/.coveragerc --cov-report xml:cov.xml --doctest-modules /pydra/pydra
     - name: Upload to codecov

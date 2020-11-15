@@ -32,6 +32,7 @@ sbatch_args = "-t 20 --mem=4GB --cpus-per-task=1 -p gablab"
 #####################################################################
 # Run with linux/alphine
 
+
 @need_singularity
 def test_linux_1(plugin, tmpdir):
     """ split commands
@@ -51,13 +52,13 @@ def test_linux_2(plugin, tmpdir):
     """ command with arguments in docker, checking the distribution
         splitter = image
     """
-#    cmd = ["pwd", "ls", "echo", "wc", "lh", "ss", "aw", "aa", "lk"]
+    #    cmd = ["pwd", "ls", "echo", "wc", "lh", "ss", "aw", "aa", "lk"]
     cmd = ["pwd", "ls"]
     image = "library://sylabsed/linux/alpine"
     singu = SingularityTask(
-        name="lin2", 
-        executable=cmd, 
-        image=image, 
+        name="lin2",
+        executable=cmd,
+        image=image,
         cache_dir=tmpdir,
         bindings=[(fmriprep_inputs["base_path"], "/BASE", "rw")],
     ).split("executable")
@@ -65,13 +66,15 @@ def test_linux_2(plugin, tmpdir):
     res = singu(plugin=plugin)
 
 
+#####################################################################
+
 
 @need_singularity
 def test_linux_sub_1(plugin, tmpdir):
     """ split commands
     	linux container, no binding
     """
-#    cmd = ["pwd", "ls", "echo", "wc", "lh", "ss", "aw", "aa", "lk"]
+    #    cmd = ["pwd", "ls", "echo", "wc", "lh", "ss", "aw", "aa", "lk"]
     cmd = ["pwd", "ls", ["echo", "hi"]]
     image = "library://sylabsed/linux/alpine"
     singu = SingularityTask(
@@ -79,8 +82,9 @@ def test_linux_sub_1(plugin, tmpdir):
     ).split("executable")
 
     with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
-    	singu(submitter=sub)
+        singu(submitter=sub)
     res = singu.result()
+
 
 @need_singularity
 def test_linux_sub_2(plugin, tmpdir):
@@ -90,14 +94,13 @@ def test_linux_sub_2(plugin, tmpdir):
     cmd = ["pwd", "ls", "echo", "wc", "lh", "ss", "aw", "aa", "lk"]
     image = "library://sylabsed/linux/alpine"
     singu = SingularityTask(
-        name="lin2", 
-        executable=cmd, 
-        image=image, 
+        name="lin2",
+        executable=cmd,
+        image=image,
         cache_dir=tmpdir,
         bindings=[(fmriprep_inputs["base_path"], "/BASE", "rw")],
     ).split("executable")
 
     with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
-    	singu(submitter=sub)
+        singu(submitter=sub)
     res = singu.result()
-

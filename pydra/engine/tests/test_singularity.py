@@ -8,7 +8,6 @@ from ..submitter import Submitter
 from ..core import Workflow
 from ..specs import ShellOutSpec, SpecInfo, File, SingularitySpec
 
-
 need_docker = pytest.mark.skipif(
     shutil.which("docker") is None or sp.call(["docker", "info"]),
     reason="no docker available",
@@ -16,7 +15,6 @@ need_docker = pytest.mark.skipif(
 need_singularity = pytest.mark.skipif(
     shutil.which("singularity") is None, reason="no singularity available"
 )
-
 
 @need_singularity
 def test_singularity_1_nosubm(tmpdir):
@@ -57,7 +55,7 @@ def test_singularity_2_nosubm(tmpdir):
 
 
 @need_singularity
-def test_singularity_2(plugin, tmpdir):
+def test_singularity_2(plugin, tmpdir, sbatch_args):
     """ a command with arguments, cmd and args given as executable
         using submitter
     """
@@ -69,7 +67,7 @@ def test_singularity_2(plugin, tmpdir):
         == f"singularity exec -B {singu.output_dir}:/output_pydra:rw --pwd /output_pydra {image} {' '.join(cmd)}"
     )
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         singu(submitter=sub)
     res = singu.result()
     assert res.output.stdout.strip() == " ".join(cmd[1:])
@@ -77,7 +75,7 @@ def test_singularity_2(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_2_singuflag(plugin, tmpdir):
+def test_singularity_2_singuflag(plugin, tmpdir, sbatch_args):
     """ a command with arguments, cmd and args given as executable
         using ShellComandTask with container_info=("singularity", image)
     """
@@ -94,7 +92,7 @@ def test_singularity_2_singuflag(plugin, tmpdir):
         == f"singularity exec -B {shingu.output_dir}:/output_pydra:rw --pwd /output_pydra {image} {' '.join(cmd)}"
     )
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         shingu(submitter=sub)
     res = shingu.result()
     assert res.output.stdout.strip() == " ".join(cmd[1:])
@@ -102,7 +100,7 @@ def test_singularity_2_singuflag(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_2a(plugin, tmpdir):
+def test_singularity_2a(plugin, tmpdir, sbatch_args):
     """ a command with arguments, using executable and args
         using submitter
     """
@@ -118,7 +116,7 @@ def test_singularity_2a(plugin, tmpdir):
         == f"singularity exec -B {singu.output_dir}:/output_pydra:rw --pwd /output_pydra {image} {cmd_exec} {' '.join(cmd_args)}"
     )
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         singu(submitter=sub)
     res = singu.result()
     assert res.output.stdout.strip() == " ".join(cmd_args)
@@ -126,7 +124,7 @@ def test_singularity_2a(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_3(plugin, tmpdir):
+def test_singularity_3(plugin, tmpdir, sbatch_args):
     """ a simple command in container with bindings,
         creating directory in tmp dir and checking if it is in the container
     """
@@ -138,7 +136,7 @@ def test_singularity_3(plugin, tmpdir):
     # binding tmp directory to the container
     singu.inputs.bindings = [(str(tmpdir), "/tmp_dir", "ro")]
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         singu(submitter=sub)
 
     res = singu.result()
@@ -147,7 +145,7 @@ def test_singularity_3(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_3_singuflag(plugin, tmpdir):
+def test_singularity_3_singuflag(plugin, tmpdir, sbatch_args):
     """ a simple command in container with bindings,
         creating directory in tmp dir and checking if it is in the container
         using ShellComandTask with container_info=("singularity", image)
@@ -165,7 +163,7 @@ def test_singularity_3_singuflag(plugin, tmpdir):
     # binding tmp directory to the container
     shingu.inputs.bindings = [(str(tmpdir), "/tmp_dir", "ro")]
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         shingu(submitter=sub)
 
     res = shingu.result()
@@ -174,7 +172,7 @@ def test_singularity_3_singuflag(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_3_singuflagbind(plugin, tmpdir):
+def test_singularity_3_singuflagbind(plugin, tmpdir, sbatch_args):
     """ a simple command in container with bindings,
         creating directory in tmp dir and checking if it is in the container
         using ShellComandTask with container_info=("singularity", image, bindings)
@@ -190,7 +188,7 @@ def test_singularity_3_singuflagbind(plugin, tmpdir):
         cache_dir=tmpdir,
     )
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         shingu(submitter=sub)
 
     res = shingu.result()
@@ -256,7 +254,7 @@ def test_singularity_st_3(plugin, tmpdir):
 
 
 @need_singularity
-def test_wf_singularity_1(plugin, tmpdir):
+def test_wf_singularity_1(plugin, tmpdir, sbatch_args):
     """ a workflow with two connected task
         the first one read the file that is bounded to the container,
         the second uses echo
@@ -288,7 +286,7 @@ def test_wf_singularity_1(plugin, tmpdir):
     )
     wf.set_output([("out", wf.singu_echo.lzout.stdout)])
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         wf(submitter=sub)
 
     res = wf.result()
@@ -297,7 +295,7 @@ def test_wf_singularity_1(plugin, tmpdir):
 
 @need_docker
 @need_singularity
-def test_wf_singularity_1a(plugin, tmpdir):
+def test_wf_singularity_1a(plugin, tmpdir, sbatch_args):
     """ a workflow with two connected task - using both containers: Docker and Singul.
         the first one read the file that is bounded to the container,
         the second uses echo
@@ -330,7 +328,7 @@ def test_wf_singularity_1a(plugin, tmpdir):
     )
     wf.set_output([("out", wf.singu_echo.lzout.stdout)])
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         wf(submitter=sub)
 
     res = wf.result()
@@ -341,7 +339,7 @@ def test_wf_singularity_1a(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_outputspec_1(plugin, tmpdir):
+def test_singularity_outputspec_1(plugin, tmpdir, sbatch_args):
     """
         customised output_spec, adding files to the output, providing specific pathname
         output_path is automatically added to the bindings
@@ -362,7 +360,7 @@ def test_singularity_outputspec_1(plugin, tmpdir):
         cache_dir=tmpdir,
     )
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         singu(submitter=sub)
 
     res = singu.result()
@@ -800,7 +798,7 @@ def test_singularity_inputspec_state_1b(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_wf_inputspec_1(plugin, tmpdir):
+def test_singularity_wf_inputspec_1(plugin, tmpdir, sbatch_args):
     """ a customized input spec for workflow with singularity tasks """
     filename = tmpdir.join("file_pydra.txt")
     with open(filename, "w") as f:
@@ -844,7 +842,7 @@ def test_singularity_wf_inputspec_1(plugin, tmpdir):
 
     wf.set_output([("out", wf.singu.lzout.stdout)])
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         wf(submitter=sub)
 
     res = wf.result()
@@ -852,7 +850,7 @@ def test_singularity_wf_inputspec_1(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_wf_state_inputspec_1(plugin, tmpdir):
+def test_singularity_wf_state_inputspec_1(plugin, tmpdir, sbatch_args):
     """ a customized input spec for workflow with singularity tasks that has a state"""
     file_1 = tmpdir.join("file_pydra.txt")
     file_2 = tmpdir.join("file_nice.txt")
@@ -901,7 +899,7 @@ def test_singularity_wf_state_inputspec_1(plugin, tmpdir):
 
     wf.set_output([("out", wf.singu.lzout.stdout)])
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         wf(submitter=sub)
 
     res = wf.result()
@@ -910,7 +908,7 @@ def test_singularity_wf_state_inputspec_1(plugin, tmpdir):
 
 
 @need_singularity
-def test_singularity_wf_ndst_inputspec_1(plugin, tmpdir):
+def test_singularity_wf_ndst_inputspec_1(plugin, tmpdir, sbatch_args):
     """ a customized input spec for workflow with singularity tasks with states"""
     file_1 = tmpdir.join("file_pydra.txt")
     file_2 = tmpdir.join("file_nice.txt")
@@ -958,7 +956,7 @@ def test_singularity_wf_ndst_inputspec_1(plugin, tmpdir):
 
     wf.set_output([("out", wf.singu.lzout.stdout)])
 
-    with Submitter(plugin=plugin) as sub:
+    with Submitter(plugin=plugin, sbatch_args=sbatch_args) as sub:
         wf(submitter=sub)
 
     res = wf.result()
